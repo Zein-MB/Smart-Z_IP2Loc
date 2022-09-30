@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Comfortaa", cursive;
+}
+
+body {
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+main .info {
+  background: #FF512F;
+  background: -webkit-linear-gradient(to right, #DD2476, #FF512F);
+  background: linear-gradient(to right, #DD2476, #FF512F);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em;
+  height: 25vh;
+}
+main .info .worldmap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 180px;
+  max-width: 100%;
+  filter: brightness(1.5);
+}
+main .info form {
+  display: flex;
+  height: 64px;
+}
+main .info input {
+  padding: 20px 15px;
+  width: 20em;
+  font-size: 18px;
+}
+main .info input:focus {
+  outline: none;
+}
+main .info button {
+  padding: 20px 15px;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+}
+main .location, main .extended-info {
+  display: flex;
+  z-index: 0;
+}
+main .location > .icon, main .extended-info > .icon {
+  width: 60px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .location > .icon i, main .extended-info > .icon i {
+  color: transparent;
+  background: #00c3ff;
+  background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);
+  background: linear-gradient(to right, #ffff1c, #00c3ff);
+  -webkit-background-clip: text;
+  font-size: 40px;
+}
+main .location > div, main .extended-info > div {
+  padding: 15px;
+  width: 160px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+}
+main .location > div:not(:first-child), main .extended-info > div:not(:first-child) {
+  border-left: 1px solid rgba(0, 17, 34, 0.2);
+}
+main .location > div > small, main .extended-info > div > small {
+  font-size: 11px;
+}
+main .location > div > p, main .extended-info > div > p {
+  font-weight: bold;
+}
+main .extended-info {
+  left: 5%;
+}
+main .map iframe {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  main {
+    width: fit-content;
+  }
+  main .info {
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    gap: 20px;
+    height: unset;
+  }
+  main .info .worldmap {
+    width: 200px;
+    height: 100px;
+    left: 65%;
+    top: 15%;
+  }
+  main .map iframe {
+    width: 636px;
+    height: 150vh;
+  }
+}
